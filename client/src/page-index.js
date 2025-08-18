@@ -1,6 +1,24 @@
 import { showAlert } from "./utils";
+import { Seagull } from "./js/seagull.js";
 
 window.addEventListener("load", () => {
+    let spriteList = [];
+
+    for (let i = 1; i <= 1; i++) {
+    let seagull = new Seagull(i); 
+    spriteList.push(seagull);
+    }
+
+    const tick = () => {
+    for (let i = 0; i < spriteList.length; i++) {
+        let sprite = spriteList[i];
+        sprite.tick();       
+    }
+
+    window.requestAnimationFrame(tick); 
+    }
+
+    tick();
 
     //showAlert();
     let btnSky = document.getElementById("btn-sky");
