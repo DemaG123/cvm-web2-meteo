@@ -5,4 +5,31 @@
 
 body {
     background-image: url('../img/wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
 }
+
+form {
+    display: flex;
+    position: fixed;
+    margin: 0px;
+    top: 50%;
+    left: 20%;
+    flex-direction: column;
+    scale: 1.75;
+}
+
+input, button {
+    margin: 5px;
+}
+
+.seagull {
+    background-image: url('../img/seagull.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 200px;
+    height: 200px;
+
+}
+
+
