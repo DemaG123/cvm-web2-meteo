@@ -19,7 +19,7 @@ form {
     scale: 1.75;
 }
 
-input, button {
+input, button, .d-none{
     margin: 5px;
 }
 
@@ -27,9 +27,13 @@ input, button {
     background-image: url('../img/seagull.gif');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 200px;
-    height: 200px;
-
+    width: 175px;
+    height: 175px;
 }
 
+.d-none{
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
 
