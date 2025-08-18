@@ -22,7 +22,7 @@ form {
     display: flex;
     flex-direction: column;
     margin: 0px;
-    scale: 1.75;
+    scale: 1.5;
 }
 
 input, button, .d-none{

@@ -4,22 +4,21 @@ export class Seagull {
         this.id = id;
         this.node = document.getElementById(this.id);
         this.node.style.left = window.innerWidth + "px";
+        this.node.style.top = Math.floor(Math.random() * 200) + "px";
 
-        
-        
-        
-        this.speedY = 5;
+        this.speedX = 5;
 
     }
 
     
     tick(){
-        let newPositionY = this.node.offsetLeft - this.speedY;
+        let newPositionY = this.node.offsetLeft - this.speedX;
 
         this.node.style.left = newPositionY + "px";
 
         if (newPositionY == -175) {
             this.node.style.left = window.innerWidth + "px";
+            this.node.style.top = Math.floor(Math.random() * 200) + "px";
             
         }
 
