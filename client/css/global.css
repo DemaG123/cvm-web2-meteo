@@ -53,12 +53,12 @@ input, button, .d-none{
 
 .btn-level{
     width: 100px;
-    height: 100px;
+    height: 50px;
     padding: 10px;
     margin: 5px;
     background-color: aqua;
     border-radius: 25px;
-    border: 5px solid lightblue;
+    border: 5px solid darkblue;
     text-align: center;
     align-content: center;
     font-size: larger;

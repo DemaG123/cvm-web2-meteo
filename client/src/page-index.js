@@ -27,14 +27,17 @@ window.addEventListener("load", () => {
 
     btnSky.onclick = () => {
         document.querySelector("body").style.backgroundImage = "url('img/sky.png')";
+        document.querySelector(".seagull").style.display = "block";
     }
 
     btnSea.onclick = () => {
         document.querySelector("body").style.backgroundImage = "url('img/sea.jpg')";
+        document.querySelector(".seagull").style.display = "block";
     }
 
     btnDeep.onclick = () => {
         document.querySelector("body").style.backgroundImage = "url('img/deep.jpg')";
+        document.querySelector(".seagull").style.display = "none";
     }
     
     document.querySelector("#error-message").style.display = "none";
