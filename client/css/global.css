@@ -3,8 +3,15 @@
     padding:0;
 }
 
-body {
+.index-body {
     background-image: url('../img/sea.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    overflow: hidden;
+}
+
+.meteo-body {
+    background-image: url('../img/background.webp');
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
     overflow: hidden;
