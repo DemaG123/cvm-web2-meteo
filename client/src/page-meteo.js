@@ -2,10 +2,9 @@ import { fetchData } from "./meteo-api";
 
 window.addEventListener("load", async () => {
     let weatherData = await fetchData(45.5019, 73.5674);
-    let listNode = document.querySelector("#info-list");
     console.log(weatherData); 
-
-    // let btnDestination = document.getElementById("btn-destination");
+    
+    let listNode = document.querySelector("#info-list");
 
     const select = document.getElementById('island-select');
     const button = document.getElementById('btn-destination');
@@ -13,13 +12,20 @@ window.addEventListener("load", async () => {
     button.onclick = (event) => {
         const selectedIsland = select.value;
         console.log("Selected island:", selectedIsland);
+        
+        // lignes 17, 18 et 19 -chatGPT
+        while (listNode.childNodes.length > 1) {
+        listNode.removeChild(listNode.lastChild);
+        }
+
         let newLineNode = document.createElement("div");
+        
         newLineNode.innerText = selectedIsland;
+
+
+        
         listNode.append(newLineNode);
 
-
-        
-        
     }
 
 

@@ -20,7 +20,7 @@ export class Shark {
                 this.node.style.top = Math.floor(Math.random() * 200) + "px";
                 this.node.style.width = 225 + "px";
                 this.node.style.height = 175 + "px";
-            }, 1000);
+            }, 750);
 
         });
         this.speedX = 5;        
