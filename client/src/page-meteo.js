@@ -1,6 +1,54 @@
 import { fetchData } from "./meteo-api";
+import { Snow } from "./js/snow.js";
+import { Rain } from "./js/rain.js";
 
 window.addEventListener("load", async () => {
+    let spriteList = [];
+    let isRaining = false;
+
+    
+    for (let i = 0; i < 100; i++) {
+    let rain = new Rain("goutte_"+i); 
+    spriteList.push(rain);
+    }
+
+    for (let i = 100; i < 200; i++) {
+    let snow = new Snow("flake_"+i); 
+    spriteList.push(snow);
+    }
+    
+    const tick = () => {
+        if (isRaining) {
+            for (let i = 0; i < spriteList.length; i++) {
+                let sprite = spriteList[i];
+                sprite.tick();       
+            }
+        }
+        window.requestAnimationFrame(tick); 
+    }
+    tick();                                                                             
+
+    
+    document.addEventListener("keydown", (event) => {
+        if (event.key == "r" || event.key == "R") {
+            isRaining = true;
+            spriteList.forEach(sprite => {
+                let singleSprite = document.getElementById(sprite.id);
+                singleSprite.style.display = "block";
+            })
+        }
+    })
+
+    document.addEventListener("keyup", (event) => {
+        if (event.key == "r" || event.key == "R") {
+            isRaining = false;
+            spriteList.forEach(sprite => {
+                let singleSprite = document.getElementById(sprite.id);
+                singleSprite.style.display = "none";
+            })            
+        }
+    })
+
     let weatherDataM = await fetchData(45.5019, -73.5674);
     let weatherDataT = await fetchData(35.6762, 139.6503);
     let weatherDataA = await fetchData(36.6997, 3.0588);

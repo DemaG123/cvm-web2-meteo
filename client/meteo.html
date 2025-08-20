@@ -13,6 +13,16 @@
     </head>
     <body class="meteo-body">
 
+        <script>
+			for (let i = 0; i < 100; i++) {
+				document.write('<div class="rain" id="goutte_' + i + '"></div>');
+			}
+            for (let i = 100; i < 200; i++) {
+				document.write('<div class="snow" id="flake_' + i + '"></div>');
+			}
+		</script>
+
+
         <main class="main-meteo">
             <div class="journal">
                 Le vent nous pousse droit vers l’horizon, mais trois routes s’ouvrent devant moi.<br>
