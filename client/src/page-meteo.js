@@ -3,24 +3,32 @@ import { Snow } from "./js/snow.js";
 import { Rain } from "./js/rain.js";
 
 window.addEventListener("load", async () => {
-    let spriteList = [];
+    let rainList = [];
+    let snowList = [];
     let isRaining = false;
+    let isSnowing = false;
 
     
     for (let i = 0; i < 100; i++) {
     let rain = new Rain("goutte_"+i); 
-    spriteList.push(rain);
+    rainList.push(rain);
     }
 
     for (let i = 100; i < 200; i++) {
     let snow = new Snow("flake_"+i); 
-    spriteList.push(snow);
+    snowList.push(snow);
     }
     
     const tick = () => {
         if (isRaining) {
-            for (let i = 0; i < spriteList.length; i++) {
-                let sprite = spriteList[i];
+            for (let i = 0; i < rainList.length; i++) {
+                let sprite = rainList[i];
+                sprite.tick();       
+            }
+        }
+        if (isSnowing) {
+            for (let i = 0; i < snowList.length; i++) {
+                let sprite = snowList[i];
                 sprite.tick();       
             }
         }
@@ -32,7 +40,7 @@ window.addEventListener("load", async () => {
     document.addEventListener("keydown", (event) => {
         if (event.key == "r" || event.key == "R") {
             isRaining = true;
-            spriteList.forEach(sprite => {
+            rainList.forEach(sprite => {
                 let singleSprite = document.getElementById(sprite.id);
                 singleSprite.style.display = "block";
             })
@@ -42,7 +50,27 @@ window.addEventListener("load", async () => {
     document.addEventListener("keyup", (event) => {
         if (event.key == "r" || event.key == "R") {
             isRaining = false;
-            spriteList.forEach(sprite => {
+            rainList.forEach(sprite => {
+                let singleSprite = document.getElementById(sprite.id);
+                singleSprite.style.display = "none";
+            })            
+        }
+    })
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key == "s" || event.key == "S") {
+            isSnowing = true;
+            snowList.forEach(sprite => {
+                let singleSprite = document.getElementById(sprite.id);
+                singleSprite.style.display = "block";
+            })
+        }
+    })
+
+    document.addEventListener("keyup", (event) => {
+        if (event.key == "s" || event.key == "S") {
+            isSnowing = false;
+            snowList.forEach(sprite => {
                 let singleSprite = document.getElementById(sprite.id);
                 singleSprite.style.display = "none";
             })            
