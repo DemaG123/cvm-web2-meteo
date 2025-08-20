@@ -15,31 +15,63 @@ window.addEventListener("load", async () => {
     button.onclick = (event) => {
     const selectedIsland = select.value;
         
-        let newLineNode = document.createElement("div");
+        let newTitleNode = document.createElement("div");
         let newImgNode = document.createElement("div");
-        newLineNode.style.margin = "10px auto 10px";
-        newLineNode.innerText = selectedIsland;
+        let newTextNode = document.createElement("div");
+
         listNode.innerHTML = "";
-        
-        listNode.append(newLineNode);
-        setInterval(() => {
-            
-            if (selectedIsland == "Montréal") {
-                newImgNode.style.backgroundImage = "url('img/montreal.avif')";
-            }
-            if (selectedIsland == "Tokyo") {
-                newImgNode.style.backgroundImage = "url('img/tokyo.jpg')";
-            }
-            if (selectedIsland == "Alger") {
-                newImgNode.style.backgroundImage = "url('img/alger.jpg')";
-            }
-            newImgNode.style.backgroundSize = "100% 100%" ;
-            newImgNode.style.width = "100%";
-            newImgNode.style.height = 300 + "px";
-            newImgNode.style.margin = "0 auto";
-            newImgNode.style.borderRadius = 20 + "px";
-        }, 1000);
+        listNode.append(newTitleNode);
         listNode.append(newImgNode);
+
+        newImgNode.style.backgroundSize = "100% 100%" ;
+        newImgNode.style.width = "100%";
+        newImgNode.style.height = "40%";
+        newImgNode.style.margin = "0 auto";
+        newImgNode.style.borderRadius = 20 + "px";
+
+        newTitleNode.style.margin = "10px auto 10px";
+        newTitleNode.innerText = selectedIsland;
+        newTextNode.style.textAlign = "center";
+        
+        if (selectedIsland == "Montréal") {
+            newTextNode.innerHTML = "";
+            newImgNode.style.backgroundImage = "url('img/montreal.avif')";
+            newTextNode.innerHTML = "Date : " + weatherDataM.time;
+            newTextNode.innerHTML += "<br>Temperature : " + weatherDataM.temperature;
+            newTextNode.innerHTML += "<br>Ressenti : " + weatherDataM.apparentTemperature;
+            newTextNode.innerHTML += "<br>Pluie : " + weatherDataM.rain;
+            newTextNode.innerHTML += "<br>Precipitation : " + weatherDataM.precipitation;
+            newTextNode.innerHTML += "<br>Neige : " + weatherDataM.snowfall;
+            newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataM.windSpeed10m;
+            
+            listNode.append(newTextNode);
+        }
+        if (selectedIsland == "Tokyo") {
+            newTextNode.innerHTML = "";
+            newImgNode.style.backgroundImage = "url('img/tokyo.jpg')";
+            newTextNode.innerHTML = "Date : " + weatherDataT.time;
+            newTextNode.innerHTML += "<br>Temperature : " + weatherDataT.temperature;
+            newTextNode.innerHTML += "<br>Ressenti : " + weatherDataT.apparentTemperature;
+            newTextNode.innerHTML += "<br>Pluie : " + weatherDataT.rain;
+            newTextNode.innerHTML += "<br>Precipitation : " + weatherDataT.precipitation;
+            newTextNode.innerHTML += "<br>Neige : " + weatherDataT.snowfall;
+            newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataT.windSpeed10m;
+            listNode.append(newTextNode);
+        }
+        if (selectedIsland == "Alger") {
+            newTextNode.innerHTML = "";
+            newImgNode.style.backgroundImage = "url('img/alger.jpg')";
+            newTextNode.innerHTML = "Date : " + weatherDataA.time;
+            newTextNode.innerHTML += "<br>Temperature : " + weatherDataA.temperature;
+            newTextNode.innerHTML += "<br>Ressenti : " + weatherDataA.apparentTemperature;
+            newTextNode.innerHTML += "<br>Pluie : " + weatherDataA.rain;
+            newTextNode.innerHTML += "<br>Precipitation : " + weatherDataA.precipitation;
+            newTextNode.innerHTML += "<br>Neige : " + weatherDataA.snowfall;
+            newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataA.windSpeed10m;
+            listNode.append(newTextNode);
+        }
+
+        
 
     }
 
