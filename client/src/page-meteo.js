@@ -119,6 +119,13 @@ window.addEventListener("load", async () => {
             newTextNode.innerHTML += "<br>Precipitation : " + weatherDataM.precipitation;
             newTextNode.innerHTML += "<br>Neige : " + weatherDataM.snowfall;
             newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataM.windSpeed10m;
+
+            // if (weatherDataM.windSpeed10m > 15) {
+            //     isRaining = true;
+            //     rainList.forEach(sprite => {
+            //     document.getElementById(sprite.id).style.display = "block";
+            //     });
+            // }
             
             listNode.append(newTextNode);
         }
