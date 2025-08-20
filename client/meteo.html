@@ -13,31 +13,37 @@
     </head>
     <body class="meteo-body">
 
-        <div class="journal">
-            Le vent nous pousse droit vers l’horizon, mais trois routes s’ouvrent devant moi.<br>
-            Je ne puis choisir seul… J’ai besoin de ton aide, voyageur.<br><br>
+        <main class="main-meteo">
+            <div class="journal">
+                Le vent nous pousse droit vers l’horizon, mais trois routes s’ouvrent devant moi.<br>
+                Je ne puis choisir seul… J’ai besoin de ton aide, voyageur.<br><br>
+                Dois-je mettre le cap sur l’île de Montréal, solide et familière ?<br><br>
+                Ou bien voguer vers l’île de Tokyo, lointaine et mystérieuse ?<br><br>
+                Ou encore tenter ma chance vers la baie d’Alger, chaleureuse et accueillante ?<br><br>
+                Toi qui me lis, dis-moi : vers quelle île dois-je conduire mon équipage ?<br>
+    
+                <select class="choice-island" id="island-select">
+                    <option value="blank"></option>
+                    <option value="Montréal">Montréal</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Alger">Alger</option>
+                </select>
+                <button class="btn-destination" id="btn-destination">Larguer les amarres</button>
+                
+            </div>
 
-            Dois-je mettre le cap sur l’île de Montréal, solide et familière ?<br><br>
+            <div class="weather-info" id="info-list">
+                Destination :
+                
+    
 
-            Ou bien voguer vers l’île de Tokyo, lointaine et mystérieuse ?<br><br>
+                
+            </div>
 
-            Ou encore tenter ma chance vers la baie d’Alger, chaleureuse et accueillante ?<br><br>
+        </main>
 
-            Toi qui me lis, dis-moi : vers quelle île dois-je conduire mon équipage ?<br>
+        
 
-            
-            <select class="choice-island" id="island-select">
-                <option value="blank"></option>
-                <option value="montreal">Montréal</option>
-                <option value="tokyo">Tokyo</option>
-                <option value="alger">Alger</option>
-            </select>
-            <button class="btn-destination" id="btn-destination">Larguer les amarres</button>
-            
-            
-            
-
-        </div>
         <a href="index.html">Quitter</a>
     </body>
 </html>

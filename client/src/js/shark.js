@@ -22,8 +22,6 @@ export class Shark {
                 this.node.style.height = 175 + "px";
             }, 1000);
 
-
-
         });
         this.speedX = 5;        
     }
