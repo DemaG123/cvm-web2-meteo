@@ -1,14 +1,14 @@
-export class Seagull {
+export class Shark {
 
     constructor(id) {
         this.id = id;
         this.node = document.getElementById(this.id);
         this.node.style.left = window.innerWidth + "px";
-        this.node.style.top = Math.floor(Math.random() * 200) + "px";
+        this.node.style.top = Math.floor(Math.random() * 500) + "px";
         this.node.addEventListener("mouseover", () => {
             this.speedX = 15;
         });
-        this.speedX = 5;
+        this.speedX = 5;        
     }
 
     tick(){

@@ -45,6 +45,15 @@ input, button, .d-none{
     height: 175px;
 }
 
+.shark{
+    position: fixed;
+    background-image: url('../img/shark.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 175px;
+    height: 175px;    
+}
+
 .d-none{
     text-align: center;
     font-weight: bold;

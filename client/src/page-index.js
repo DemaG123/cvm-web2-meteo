@@ -1,12 +1,14 @@
 import { showAlert } from "./utils";
 import { Seagull } from "./js/seagull.js";
+import { Shark } from "./js/shark.js";
 
 window.addEventListener("load", () => {
     let spriteList = [];
-
-    for (let i = 1; i <= 1; i++) {
-    let seagull = new Seagull(i); 
+    let seagull = new Seagull(1);
+    let shark = new Shark(2); 
+    for (let i = 1; i <= 2; i++) {
     spriteList.push(seagull);
+    spriteList.push(shark);
     }
 
     const tick = () => {
@@ -24,20 +26,24 @@ window.addEventListener("load", () => {
     let btnSky = document.getElementById("btn-sky");
     let btnSea = document.getElementById("btn-sea");
     let btnDeep = document.getElementById("btn-deep");
+    document.querySelector(".shark").style.display = "none";
 
     btnSky.onclick = () => {
         document.querySelector("body").style.backgroundImage = "url('img/sky.png')";
         document.querySelector(".seagull").style.display = "block";
+        document.querySelector(".shark").style.display = "none";
     }
 
     btnSea.onclick = () => {
         document.querySelector("body").style.backgroundImage = "url('img/sea.jpg')";
         document.querySelector(".seagull").style.display = "block";
+        document.querySelector(".shark").style.display = "none";
     }
 
     btnDeep.onclick = () => {
         document.querySelector("body").style.backgroundImage = "url('img/deep.jpg')";
         document.querySelector(".seagull").style.display = "none";
+        document.querySelector(".shark").style.display = "block";
     }
 
     btnSky.onmouseover = () => {
