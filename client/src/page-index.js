@@ -39,6 +39,30 @@ window.addEventListener("load", () => {
         document.querySelector("body").style.backgroundImage = "url('img/deep.jpg')";
         document.querySelector(".seagull").style.display = "none";
     }
+
+    btnSky.onmouseover = () => {
+        btnSky.style.backgroundColor = "yellow";
+    }
+
+    btnSky.onmouseout = () => {
+        btnSky.style.backgroundColor = "aqua";
+    }
+
+    btnSea.onmouseover = () => {
+        btnSea.style.backgroundColor = "yellow";
+    }
+
+    btnSea.onmouseout = () => {
+        btnSea.style.backgroundColor = "aqua";
+    }
+
+    btnDeep.onmouseover = () => {
+        btnDeep.style.backgroundColor = "yellow";
+    }
+
+    btnDeep.onmouseout = () => {
+        btnDeep.style.backgroundColor = "aqua";
+    }
     
     document.querySelector("#error-message").style.display = "none";
 
