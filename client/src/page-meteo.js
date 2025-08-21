@@ -114,6 +114,10 @@ window.addEventListener("load", async () => {
     let weatherDataM = await fetchData(45.5019, -73.5674);
     let weatherDataT = await fetchData(35.6762, 139.6503);
     let weatherDataA = await fetchData(36.6997, 3.0588);
+
+    // weatherDataM.rain = 10;
+    // weatherDataM.snowfall = 5;
+    // hardcoded values for rain and snow animations to see if they work.
     
     console.log(weatherDataM); 
     
