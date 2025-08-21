@@ -28,22 +28,37 @@ window.addEventListener("load", () => {
     let btnDeep = document.getElementById("btn-deep");
     document.querySelector(".shark").style.display = "none";
 
+    if (localStorage.getItem("bg")) {
+        document.querySelector("body").style.backgroundImage = localStorage.getItem("bg");
+        document.querySelector(".seagull").style.display = localStorage.getItem("seagull");
+        document.querySelector(".shark").style.display = localStorage.getItem("shark");
+    }
+
     btnSky.onclick = () => {
         document.querySelector("body").style.backgroundImage = "url('img/sky.png')";
         document.querySelector(".seagull").style.display = "block";
         document.querySelector(".shark").style.display = "none";
+        localStorage.setItem("bg", "url('img/sky.png')");
+        localStorage.setItem("seagull", "block");
+        localStorage.setItem("shark", "none");
     }
 
     btnSea.onclick = () => {
         document.querySelector("body").style.backgroundImage = "url('img/sea.jpg')";
         document.querySelector(".seagull").style.display = "block";
         document.querySelector(".shark").style.display = "none";
+        localStorage.setItem("bg", "url('img/sea.jpg')");
+        localStorage.setItem("seagull", "block");
+        localStorage.setItem("shark", "none");
     }
 
     btnDeep.onclick = () => {
         document.querySelector("body").style.backgroundImage = "url('img/deep.jpg')";
         document.querySelector(".seagull").style.display = "none";
         document.querySelector(".shark").style.display = "block";
+        localStorage.setItem("bg", "url('img/deep.jpg')");
+        localStorage.setItem("seagull", "none");
+        localStorage.setItem("shark", "block");
     }
 
     btnSky.onmouseover = () => {

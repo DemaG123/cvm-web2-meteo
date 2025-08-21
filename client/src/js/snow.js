@@ -16,7 +16,6 @@ export class Snow {
         this.node.style.top = newPositionY + "px";
         this.node.style.left = newPositionX + "px";
 
-
         if (newPositionY > window.innerHeight) {
             this.node.style.left = Math.floor(Math.random() * window.innerWidth * 1.5) + "px";
             this.node.style.top = -100 + "px";
