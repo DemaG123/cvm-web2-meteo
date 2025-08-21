@@ -1,4 +1,19 @@
-Ahmed Gacem
+
+# Ahmed Gacem
+
+## Animation
+
+1) Seagull : une mouette vole de droite à gauche à travers l'écran en répétition dans le sea et sky level. Lorque l'utilisateur essayer de cliquer la mouette accélère.
+
+2) Shark : un requin nage de droite à gauche à travers l'écran en répétition dans le deep level. Lorque l'utilisateur essayer de cliquer le requin un jumpscare et afficher en plein écran d'une attaque de requin.
+
+3) Wind : 100 feuille d'arbre vole de droite à gauche à travers l'écran en répétition dans la page météo. la vitesse de l'animation varie selon la vitesse afficher par le API si la vitesse est supérieur à 0 l'animation apparait si la touche W ou w est presser.
+
+4) Snow : 100 flocons de neige tombe de haut en bas en répétition dans la page météo. la vitesse de l'animation varie selon la vitesse afficher par le API si la vitesse est supérieur à 0 l'animation apparait si la touche S ou s est presser.
+
+5) Rain : 100 goutte d'eau tombe de haut en bas en répétition dans la page météo. la vitesse de l'animation varie selon la vitesse afficher par le API si la vitesse est supérieur à 0 l'animation apparait si la touche R ou r est presser.
+
+
 # CVM Météo
 
 ## Pré-requis
