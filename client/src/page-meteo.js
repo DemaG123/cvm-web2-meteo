@@ -154,13 +154,47 @@ window.addEventListener("load", async () => {
             newTextNode.innerHTML += "<br>Neige : " + weatherDataM.snowfall;
             newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataM.windSpeed10m;
 
-            // if (weatherDataM.windSpeed10m > 15) {
-            //     isRaining = true;
-            //     rainList.forEach(sprite => {
-            //     document.getElementById(sprite.id).style.display = "block";
-            //     });
-            // }
-            
+            if (weatherDataM.rain > 0) {
+                isRaining = true;
+                rainList.forEach(sprite => {
+                    sprite.speedX = weatherDataM.rain;
+                    document.getElementById(sprite.id).style.display = "block";
+                });
+                
+            } else {
+                isRaining = false;
+                rainList.forEach(sprite => {
+                    document.getElementById(sprite.id).style.display = "none";
+                });
+            }
+
+            if (weatherDataM.snowfall > 0) {
+                isSnowing = true;
+                snowList.forEach(sprite => {
+                sprite.speedX = weatherDataM.snowfall;
+                document.getElementById(sprite.id).style.display = "block";
+                });                
+            } else {
+                isSnowing = false;
+                snowList.forEach(sprite => {
+                    document.getElementById(sprite.id).style.display = "none";
+                });                
+            }
+
+            if (weatherDataM.windSpeed10m > 0) {
+                isWinding = true;
+                windList.forEach(sprite => {
+                sprite.speedX = weatherDataM.windSpeed10m;
+                document.getElementById(sprite.id).style.display = "block";
+                });
+            }
+            else {
+                isWinding = false;
+                windList.forEach(sprite => {
+                    document.getElementById(sprite.id).style.display = "none";
+                });
+            }
+
             listNode.append(newTextNode);
         }
         if (selectedIsland == "Tokyo") {
@@ -173,6 +207,47 @@ window.addEventListener("load", async () => {
             newTextNode.innerHTML += "<br>Precipitation : " + weatherDataT.precipitation;
             newTextNode.innerHTML += "<br>Neige : " + weatherDataT.snowfall;
             newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataT.windSpeed10m;
+
+            if (weatherDataT.rain > 0) {
+                isRaining = true;
+                rainList.forEach(sprite => {
+                    sprite.speedX = weatherDataT.rain;
+                    document.getElementById(sprite.id).style.display = "block";
+                });
+            } else {
+                isRaining = false;
+                rainList.forEach(sprite => {
+                    document.getElementById(sprite.id).style.display = "none";
+                });
+            }
+
+            if (weatherDataT.snowfall > 0) {
+                isSnowing = true;
+                snowList.forEach(sprite => {
+                    sprite.speedX = weatherDataT.snowfall;
+                    document.getElementById(sprite.id).style.display = "block";
+                });
+            } else {
+                isSnowing = false;
+                snowList.forEach(sprite => {
+                    document.getElementById(sprite.id).style.display = "none";
+                });
+            }
+
+            if (weatherDataT.windSpeed10m > 0) {
+                isWinding = true;
+                windList.forEach(sprite => {
+                sprite.speedX = weatherDataT.windSpeed10m;
+                document.getElementById(sprite.id).style.display = "block";
+                });
+            }
+            else {
+                isWinding = false;
+                windList.forEach(sprite => {
+                    document.getElementById(sprite.id).style.display = "none";
+                });
+            }
+
             listNode.append(newTextNode);
         }
         if (selectedIsland == "Alger") {
@@ -185,6 +260,47 @@ window.addEventListener("load", async () => {
             newTextNode.innerHTML += "<br>Precipitation : " + weatherDataA.precipitation;
             newTextNode.innerHTML += "<br>Neige : " + weatherDataA.snowfall;
             newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataA.windSpeed10m;
+
+            if (weatherDataA.rain > 0) {
+                isRaining = true;
+                rainList.forEach(sprite => {
+                    sprite.speedX = weatherDataA.rain;
+                    document.getElementById(sprite.id).style.display = "block";
+                });
+            } else {
+                isRaining = false;
+                rainList.forEach(sprite => {
+                    document.getElementById(sprite.id).style.display = "none";
+                });
+            }
+
+            if (weatherDataA.snowfall > 0) {
+                isSnowing = true;
+                snowList.forEach(sprite => {
+                    sprite.speedX = weatherDataA.snowfall;
+                    document.getElementById(sprite.id).style.display = "block";
+                });
+            } else {
+                isSnowing = false;
+                snowList.forEach(sprite => {
+                    document.getElementById(sprite.id).style.display = "none";
+                });
+            }
+
+            if (weatherDataA.windSpeed10m > 0) {
+                isWinding = true;
+                windList.forEach(sprite => {
+                sprite.speedX = weatherDataA.windSpeed10m;
+                document.getElementById(sprite.id).style.display = "block";
+                });
+            }
+            else {
+                isWinding = false;
+                windList.forEach(sprite => {
+                    document.getElementById(sprite.id).style.display = "none";
+                });
+            }
+
             listNode.append(newTextNode);
         }
 
