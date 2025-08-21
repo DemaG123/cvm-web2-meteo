@@ -83,6 +83,16 @@ input, button, .d-none{
     display: none;
 }
 
+.wind{
+    position: fixed;
+    background-image: url('../img/leaf.webp');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+
 .d-none{
     text-align: center;
     font-weight: bold;

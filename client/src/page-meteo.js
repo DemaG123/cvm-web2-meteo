@@ -1,12 +1,15 @@
 import { fetchData } from "./meteo-api";
 import { Snow } from "./js/snow.js";
 import { Rain } from "./js/rain.js";
+import { Wind } from "./js/wind.js";
 
 window.addEventListener("load", async () => {
     let rainList = [];
     let snowList = [];
+    let windList = [];
     let isRaining = false;
     let isSnowing = false;
+    let isWinding = false;
 
     
     for (let i = 0; i < 100; i++) {
@@ -18,7 +21,12 @@ window.addEventListener("load", async () => {
     let snow = new Snow("flake_"+i); 
     snowList.push(snow);
     }
-    
+
+    for (let i = 200; i < 300; i++) {
+    let wind = new Wind("wind_" + i);
+    windList.push(wind);
+    }
+
     const tick = () => {
         if (isRaining) {
             for (let i = 0; i < rainList.length; i++) {
@@ -32,7 +40,13 @@ window.addEventListener("load", async () => {
                 sprite.tick();       
             }
         }
-        window.requestAnimationFrame(tick); 
+        if (isWinding) {
+            for (let i = 0; i < windList.length; i++) {
+                let sprite = windList[i];
+                sprite.tick();
+            }
+        }
+        window.requestAnimationFrame(tick);
     }
     tick();                                                                             
 
@@ -74,6 +88,26 @@ window.addEventListener("load", async () => {
                 let singleSprite = document.getElementById(sprite.id);
                 singleSprite.style.display = "none";
             })            
+        }
+    })
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key == "w" || event.key == "W") {
+            isWinding = true;
+            windList.forEach(sprite => {
+                let singleSprite = document.getElementById(sprite.id);
+                singleSprite.style.display = "block";
+            })
+        }
+    })
+
+    document.addEventListener("keyup", (event) => {
+        if (event.key == "w" || event.key == "W") {
+            isWinding = false;
+            windList.forEach(sprite => {
+                let singleSprite = document.getElementById(sprite.id);
+                singleSprite.style.display = "none";
+            })
         }
     })
 
