@@ -28,6 +28,7 @@ window.addEventListener("load", () => {
     let btnDeep = document.getElementById("btn-deep");
     document.querySelector(".shark").style.display = "none";
 
+
     if (localStorage.getItem("bg")) {
         document.querySelector("body").style.backgroundImage = localStorage.getItem("bg");
         document.querySelector(".seagull").style.display = localStorage.getItem("seagull");
