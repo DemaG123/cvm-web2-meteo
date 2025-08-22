@@ -123,7 +123,7 @@ input, button, .d-none{
     font-family: "Quintessential", serif;
     width: 40vw;
     height: 750px;
-    font-size: x-large;
+    font-size: 2.5vh;
     padding: 2vw;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
@@ -174,6 +174,18 @@ input, button, .d-none{
     opacity: 0;
     position: fixed;
     overflow: hidden;
-    pointer-events: none; /*Merci Monsieur !!! :)*/
-    
+    pointer-events: none; /*Merci Monsieur !!! :)*/ 
+}
+
+.admin-menu{
+    font-family: "Roboto", sans-serif;
+    width: 50%;
+    margin: auto;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1vh;
+    font-size: medium ;
+    display: none;
 }

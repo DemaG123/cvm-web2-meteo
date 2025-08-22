@@ -10,8 +10,6 @@ window.addEventListener("load", async () => {
     let isRaining = false;
     let isSnowing = false;
     let isWinding = false;
-
-    
     
     for (let i = 0; i < 100; i++) {
         let rain = new Rain("goutte_"+i); 
@@ -49,7 +47,33 @@ window.addEventListener("load", async () => {
         }
         window.requestAnimationFrame(tick);
     }
-    tick();                                                                             
+    tick();   
+    
+    document.addEventListener("keydown", (event) => {
+        if (event.key == "d" || event.key == "D") {
+            document.querySelector(".filter").style.opacity = 0;
+        }
+    })
+    
+    document.addEventListener("keydown", (event) => {
+        if (event.key == "n" || event.key == "N") {
+            document.querySelector(".filter").style.opacity = 0.5;
+        }
+    })
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key == "h" || event.key == "H") {
+            let menuHidden = document.getElementById('menuH');
+            menuHidden.style.display = "block";
+        }
+    })
+    
+    document.addEventListener("keyup", (event) => {
+        if (event.key == "h" || event.key == "H") {
+            let menuHidden = document.getElementById('menuH');
+            menuHidden.style.display = "none";
+        }
+    })
     
     document.addEventListener("keydown", (event) => {
         if (event.key == "r" || event.key == "R") {
@@ -325,8 +349,6 @@ window.addEventListener("load", async () => {
 
             listNode.append(newTextNode);
         }
-
-        
 
     }
 
