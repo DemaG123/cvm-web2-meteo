@@ -19,6 +19,12 @@ export class Rain {
             this.node.style.top = -100 + "px";
         }
 
+        this.node.addEventListener("mouseover", () => {
+            this.node.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+            this.node.style.top = -100 + "px";
+        });         
+        
+
     }
 
 }

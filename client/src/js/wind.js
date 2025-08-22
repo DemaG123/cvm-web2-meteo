@@ -19,6 +19,11 @@ export class Wind {
             this.node.style.left = window.innerWidth + 100 + "px";
         }
 
+        this.node.addEventListener("mouseover", () => {
+            this.node.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+            this.node.style.left = window.innerWidth + 100 + "px";
+        });            
+
     }
 
 }
