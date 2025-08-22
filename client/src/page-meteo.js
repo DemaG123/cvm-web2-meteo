@@ -150,12 +150,12 @@ window.addEventListener("load", async () => {
             newTextNode.innerHTML = "";
             newImgNode.style.backgroundImage = "url('img/montreal.avif')";
             newTextNode.innerHTML = "Date : " + weatherDataM.time;
-            newTextNode.innerHTML += "<br>Temperature : " + weatherDataM.temperature;
-            newTextNode.innerHTML += "<br>Ressenti : " + weatherDataM.apparentTemperature;
-            newTextNode.innerHTML += "<br>Pluie : " + weatherDataM.rain;
-            newTextNode.innerHTML += "<br>Precipitation : " + weatherDataM.precipitation;
-            newTextNode.innerHTML += "<br>Neige : " + weatherDataM.snowfall;
-            newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataM.windSpeed10m;
+            newTextNode.innerHTML += "<br>Temperature : " + weatherDataM.temperature + " °C";
+            newTextNode.innerHTML += "<br>Ressenti : " + weatherDataM.apparentTemperature + " °C";
+            newTextNode.innerHTML += "<br>Pluie : " + weatherDataM.rain + " mm";
+            newTextNode.innerHTML += "<br>Precipitation : " + weatherDataM.precipitation + " mm";
+            newTextNode.innerHTML += "<br>Neige : " + weatherDataM.snowfall + " cm";
+            newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataM.windSpeed10m + " km/h";
 
             if (weatherDataM.rain > 0) {
                 isRaining = true;
@@ -204,12 +204,12 @@ window.addEventListener("load", async () => {
             newTextNode.innerHTML = "";
             newImgNode.style.backgroundImage = "url('img/tokyo.jpg')";
             newTextNode.innerHTML = "Date : " + weatherDataT.time;
-            newTextNode.innerHTML += "<br>Temperature : " + weatherDataT.temperature;
-            newTextNode.innerHTML += "<br>Ressenti : " + weatherDataT.apparentTemperature;
-            newTextNode.innerHTML += "<br>Pluie : " + weatherDataT.rain;
-            newTextNode.innerHTML += "<br>Precipitation : " + weatherDataT.precipitation;
-            newTextNode.innerHTML += "<br>Neige : " + weatherDataT.snowfall;
-            newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataT.windSpeed10m;
+            newTextNode.innerHTML += "<br>Temperature : " + weatherDataT.temperature + " °C";
+            newTextNode.innerHTML += "<br>Ressenti : " + weatherDataT.apparentTemperature + " °C";
+            newTextNode.innerHTML += "<br>Pluie : " + weatherDataT.rain + " mm";
+            newTextNode.innerHTML += "<br>Precipitation : " + weatherDataT.precipitation + " mm";
+            newTextNode.innerHTML += "<br>Neige : " + weatherDataT.snowfall + " cm";
+            newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataT.windSpeed10m + " km/h";
 
             if (weatherDataT.rain > 0) {
                 isRaining = true;
@@ -257,12 +257,12 @@ window.addEventListener("load", async () => {
             newTextNode.innerHTML = "";
             newImgNode.style.backgroundImage = "url('img/alger.jpg')";
             newTextNode.innerHTML = "Date : " + weatherDataA.time;
-            newTextNode.innerHTML += "<br>Temperature : " + weatherDataA.temperature;
-            newTextNode.innerHTML += "<br>Ressenti : " + weatherDataA.apparentTemperature;
-            newTextNode.innerHTML += "<br>Pluie : " + weatherDataA.rain;
-            newTextNode.innerHTML += "<br>Precipitation : " + weatherDataA.precipitation;
-            newTextNode.innerHTML += "<br>Neige : " + weatherDataA.snowfall;
-            newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataA.windSpeed10m;
+            newTextNode.innerHTML += "<br>Temperature : " + weatherDataA.temperature + " °C";
+            newTextNode.innerHTML += "<br>Ressenti : " + weatherDataA.apparentTemperature + " °C";
+            newTextNode.innerHTML += "<br>Pluie : " + weatherDataA.rain + " mm";
+            newTextNode.innerHTML += "<br>Precipitation : " + weatherDataA.precipitation + " mm";
+            newTextNode.innerHTML += "<br>Neige : " + weatherDataA.snowfall + " cm";
+            newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataA.windSpeed10m + " km/h";
 
             if (weatherDataA.rain > 0) {
                 isRaining = true;
