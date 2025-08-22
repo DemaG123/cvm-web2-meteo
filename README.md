@@ -7,11 +7,13 @@
 
 2) Shark : un requin nage de droite à gauche à travers l'écran en répétition dans le deep level. Lorque l'utilisateur essayer de cliquer le requin un jumpscare et afficher en plein écran d'une attaque de requin.
 
-3) Wind : 100 feuille d'arbre vole de droite à gauche à travers l'écran en répétition dans la page météo. la vitesse de l'animation varie selon la vitesse afficher par le API si la vitesse est supérieur à 0 l'animation apparait si la touche W ou w est presser.
+3) Wind : 100 feuilles d'arbre volent de droite à gauche à travers l'écran en répétition dans la page météo. la vitesse de l'animation varie selon la vitesse afficher par le API si la vitesse est supérieur à 0 l'animation apparait si la touche W ou w est presser. Quand la souris entre en contact avec une feuille celle-ci part au point de départ.
 
-4) Snow : 100 flocons de neige tombe de haut en bas en répétition dans la page météo. la vitesse de l'animation varie selon la vitesse afficher par le API si la vitesse est supérieur à 0 l'animation apparait si la touche S ou s est presser.
+4) Snow : 100 flocons de neige tombent de haut en bas en répétition dans la page météo. la vitesse de l'animation varie selon la vitesse afficher par le API si la vitesse est supérieur à 0 l'animation apparait si la touche S ou s est presser. Quand la souris entre en contact avec un flocon celle-ci part au point de départ.
 
-5) Rain : 100 goutte d'eau tombe de haut en bas en répétition dans la page météo. la vitesse de l'animation varie selon la vitesse afficher par le API si la vitesse est supérieur à 0 l'animation apparait si la touche R ou r est presser.
+5) Rain : 100 gouttes d'eau tombent de haut en bas en répétition dans la page météo. la vitesse de l'animation varie selon la vitesse afficher par le API si la vitesse est supérieur à 0 l'animation apparait si la touche R ou r est presser. Quand la souris entre en contact avec une gouttes celle-ci part au point de départ.
+
+6) Ombrage : lorsqu'il fait jour l'écran et illuminé. Par contre, lorqu'il fait nuit un filtre opaque recouvre l'écran en entier.
 
 
 # CVM Météo
