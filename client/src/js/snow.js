@@ -11,7 +11,7 @@ export class Snow {
     tick(){
         
         let newPositionY = this.node.offsetTop + this.speedX;
-        let newPositionX = this.node.offsetLeft - 5;
+        let newPositionX = this.node.offsetLeft - this.speedX;
 
         this.node.style.top = newPositionY + "px";
         this.node.style.left = newPositionX + "px";
