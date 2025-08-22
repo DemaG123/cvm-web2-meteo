@@ -12,21 +12,22 @@ window.addEventListener("load", async () => {
     let isWinding = false;
 
     
+    
     for (let i = 0; i < 100; i++) {
-    let rain = new Rain("goutte_"+i); 
-    rainList.push(rain);
+        let rain = new Rain("goutte_"+i); 
+        rainList.push(rain);
     }
-
+    
     for (let i = 100; i < 200; i++) {
-    let snow = new Snow("flake_"+i); 
-    snowList.push(snow);
+        let snow = new Snow("flake_"+i); 
+        snowList.push(snow);
     }
-
+    
     for (let i = 200; i < 300; i++) {
-    let wind = new Wind("wind_" + i);
-    windList.push(wind);
+        let wind = new Wind("wind_" + i);
+        windList.push(wind);
     }
-
+    
     const tick = () => {
         if (isRaining) {
             for (let i = 0; i < rainList.length; i++) {
@@ -49,7 +50,7 @@ window.addEventListener("load", async () => {
         window.requestAnimationFrame(tick);
     }
     tick();                                                                             
-
+    
     document.addEventListener("keydown", (event) => {
         if (event.key == "r" || event.key == "R") {
             isRaining = true;
@@ -59,7 +60,7 @@ window.addEventListener("load", async () => {
             })
         }
     })
-
+    
     document.addEventListener("keyup", (event) => {
         if (event.key == "r" || event.key == "R") {
             isRaining = false;
@@ -69,7 +70,7 @@ window.addEventListener("load", async () => {
             })            
         }
     })
-
+    
     document.addEventListener("keydown", (event) => {
         if (event.key == "s" || event.key == "S") {
             isSnowing = true;
@@ -79,7 +80,7 @@ window.addEventListener("load", async () => {
             })
         }
     })
-
+    
     document.addEventListener("keyup", (event) => {
         if (event.key == "s" || event.key == "S") {
             isSnowing = false;
@@ -89,7 +90,7 @@ window.addEventListener("load", async () => {
             })            
         }
     })
-
+    
     document.addEventListener("keydown", (event) => {
         if (event.key == "w" || event.key == "W") {
             isWinding = true;
@@ -99,7 +100,7 @@ window.addEventListener("load", async () => {
             })
         }
     })
-
+    
     document.addEventListener("keyup", (event) => {
         if (event.key == "w" || event.key == "W") {
             isWinding = false;
@@ -109,11 +110,11 @@ window.addEventListener("load", async () => {
             })
         }
     })
-
+    
     let weatherDataM = await fetchData(45.5019, -73.5674);
     let weatherDataT = await fetchData(35.6762, 139.6503);
     let weatherDataA = await fetchData(36.6997, 3.0588);
-
+    
     // weatherDataM.rain = 10;
     // weatherDataM.snowfall = 5;
     // hardcoded values for rain and snow animations to see if they work.
@@ -126,22 +127,22 @@ window.addEventListener("load", async () => {
     let listNode = document.querySelector("#info-list");
     
     button.onclick = (event) => {
-    const selectedIsland = select.value;
+        const selectedIsland = select.value;
         
         let newTitleNode = document.createElement("div");
         let newImgNode = document.createElement("div");
         let newTextNode = document.createElement("div");
-
+        
         listNode.innerHTML = "";
         listNode.append(newTitleNode);
         listNode.append(newImgNode);
-
+        
         newImgNode.style.backgroundSize = "100% 100%" ;
         newImgNode.style.width = "100%";
         newImgNode.style.height = "40%";
         newImgNode.style.margin = "0 auto";
         newImgNode.style.borderRadius = 20 + "px";
-
+        
         newTitleNode.style.margin = "10px auto 10px";
         newTitleNode.innerText = selectedIsland;
         newTextNode.style.textAlign = "center";
@@ -156,7 +157,13 @@ window.addEventListener("load", async () => {
             newTextNode.innerHTML += "<br>Precipitation : " + weatherDataM.precipitation + " mm";
             newTextNode.innerHTML += "<br>Neige : " + weatherDataM.snowfall + " cm";
             newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataM.windSpeed10m + " km/h";
-
+                        
+            if (weatherDataM.isDay == 1) {
+                document.querySelector(".filter").style.opacity = 0;
+            } else {
+                document.querySelector(".filter").style.opacity = 0.5;
+            }
+            
             if (weatherDataM.rain > 0) {
                 isRaining = true;
                 rainList.forEach(sprite => {
@@ -170,12 +177,12 @@ window.addEventListener("load", async () => {
                     document.getElementById(sprite.id).style.display = "none";
                 });
             }
-
+            
             if (weatherDataM.snowfall > 0) {
                 isSnowing = true;
                 snowList.forEach(sprite => {
-                sprite.speedX = weatherDataM.snowfall;
-                document.getElementById(sprite.id).style.display = "block";
+                    sprite.speedX = weatherDataM.snowfall;
+                    document.getElementById(sprite.id).style.display = "block";
                 });                
             } else {
                 isSnowing = false;
@@ -210,6 +217,12 @@ window.addEventListener("load", async () => {
             newTextNode.innerHTML += "<br>Precipitation : " + weatherDataT.precipitation + " mm";
             newTextNode.innerHTML += "<br>Neige : " + weatherDataT.snowfall + " cm";
             newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataT.windSpeed10m + " km/h";
+
+            if (weatherDataT.isDay == 1) {
+                document.querySelector(".filter").style.opacity = 0;
+            } else {
+                document.querySelector(".filter").style.opacity = 0.5;
+            }            
 
             if (weatherDataT.rain > 0) {
                 isRaining = true;
@@ -263,6 +276,12 @@ window.addEventListener("load", async () => {
             newTextNode.innerHTML += "<br>Precipitation : " + weatherDataA.precipitation + " mm";
             newTextNode.innerHTML += "<br>Neige : " + weatherDataA.snowfall + " cm";
             newTextNode.innerHTML += "<br>Vitesse du vent : " + weatherDataA.windSpeed10m + " km/h";
+
+            if (weatherDataA.isDay == 1) {
+                document.querySelector(".filter").style.opacity = 0;
+            } else {
+                document.querySelector(".filter").style.opacity = 0.5;
+            }            
 
             if (weatherDataA.rain > 0) {
                 isRaining = true;
